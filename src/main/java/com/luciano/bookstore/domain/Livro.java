@@ -22,20 +22,20 @@ public class Livro implements Serializable {
 	private String texto;
 	
 	@ManyToOne
-	@JoinColumn(name="categoria_id	")
-	private Categoria catergoria;
+	@JoinColumn(name="categoria_id")
+	private Categoria categoria;
 
 	public Livro() {
 		super();
 	}
 
-	public Livro(Integer id, String titulo, String nome_autor, String texto, Categoria catergoria) {
+	public Livro(Integer id, String titulo, String nome_autor, String texto, Categoria categoria) {
 		super();
 		this.id = id;
 		this.titulo = titulo;
 		this.nome_autor = nome_autor;
 		this.texto = texto;
-		this.catergoria = catergoria;
+		this.categoria = categoria;
 	}
 
 	public Integer getId() {
@@ -71,11 +71,11 @@ public class Livro implements Serializable {
 	}
 
 	public Categoria getCatergoria() {
-		return catergoria;
+		return categoria;
 	}
 
 	public void setCatergoria(Categoria catergoria) {
-		this.catergoria = catergoria;
+		this.categoria = catergoria;
 	}
 
 	@Override
