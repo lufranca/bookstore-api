@@ -9,9 +9,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-
-import org.hibernate.annotations.ManyToAny;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -76,11 +73,11 @@ public class Livro implements Serializable {
 		this.texto = texto;
 	}
 
-	public Categoria getCatergoria() {
+	public Categoria getCategoria() {
 		return categoria;
 	}
 
-	public void setCatergoria(Categoria catergoria) {
+	public void setCategoria(Categoria catergoria) {
 		this.categoria = catergoria;
 	}
 

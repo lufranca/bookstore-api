@@ -46,8 +46,13 @@ public class LivroService {
 	public Livro create(Integer id_cat, Livro obj) {
 		obj.setId(null);
 		Categoria cat = categoriaService.findById(id_cat);
-		obj.setCatergoria(cat);
+		obj.setCategoria(cat);
 		return repository.save(obj);
+	}
+
+	public void delete(Integer id) {
+		Livro obj = findById(id);
+		repository.delete(obj);
 	}
 
 }
