@@ -2,12 +2,19 @@ package com.luciano.bookstore.dtos;
 
 import java.io.Serializable;
 
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotEmpty;
+
 import com.luciano.bookstore.domain.Livro;
 
+@SuppressWarnings("deprecation")
 public class LivroDTO implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	private Integer id;
+	
+	@NotEmpty(message = "Campo TITULO é obrigatorio!")
+	@Length(min = 3, max = 50, message="O campo TITULO deve ter entre 3 e 50 caracteres!")
 	private String titulo;
 
 	public LivroDTO() {
